@@ -1,5 +1,6 @@
 const express= require('express');
 const v1StudentRouter=require("./v1/routes/estudiantesRoutes");
+require('dotenv').config();
 
 const app= express();
 const PORT= process.env.PORT || 3000;

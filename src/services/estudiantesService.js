@@ -25,9 +25,27 @@ const verificarCuenta=(cuenta)=>{
     return cuentaVer;
 };
 
+const materias=(id)=>{
+    const materias=Estudiante.materias(id);
+    return materias;
+};
+
+const obtenerMaterias=(id)=>{
+    const materias=Estudiante.obtenerMaterias(id);
+    return materias;
+};
+
+const createCuenta=(cuenta)=>{
+    const materias=Estudiante.createCuenta(cuenta);
+    return materias;
+};
+
 module.exports={
     getAllStudents,
     getOneStudent,
     createStudent,
-    verificarCuenta
+    verificarCuenta,
+    obtenerMaterias,
+    materias,
+    createCuenta
 }
