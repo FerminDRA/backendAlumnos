@@ -25,7 +25,7 @@ const getAllStudents = async () => {
 // Obtener un estudiante por ID
 const getOneStudent = async (id) => {
   try {
-    const res = await pool.query('SELECT * FROM alumnos WHERE id = $1', [id]);
+    const res = await pool.query('SELECT * FROM alumnos WHERE matricula = $1', [id]);
     return res.rows[0];
   } catch (error) {
     throw error;

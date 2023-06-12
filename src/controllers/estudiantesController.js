@@ -12,7 +12,7 @@ const getOneStudent=async(req,res)=>{
     try {
         const token = req.headers.authorization;
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        const studentId = decodedToken.id;
+        const studentId = decodedToken.matricula;
         const student = await estudiantesService.getOneStudent(studentId);
         res.send({ status: 'OK', data: student });
       } catch (error) {
@@ -23,7 +23,7 @@ const getOneStudent=async(req,res)=>{
 const createStudent=async(req,res)=>{
     const {body}=req
     if (
-        !body.id||
+      !body.id||
 	    !body.nombres||
 	    !body.apellidos||
 	    !body.matricula||
